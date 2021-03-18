@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html  lang="en-AU">
+<head>
+<meta charset="utf-8"/>
+<meta name="title" content="Random Usplash Image">
+<meta name="description" content="Random Usplash Image">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta name="robots" content="noindex,nofollow,noarchive" />
+<link rel="icon" type="image/svg+xml" href="">
+<title>Random Usplash Image</title>
+
+<!-- License
+Page content CC-BY 4 Stuart Mau https://creativecommons.org/licenses/by/4.0/
+Unsplash content https://unsplash.com/license
+Code MIT Copyright 2021 Stuart Mau
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ -->
+
+<style>
+
+:root {
+  --shadowColour: rgba(  0, 0, 0, 0.35);
+  --backgroundCenterColour: #006da8;
+  --backgroundEdgeColour: #062947;
+}
+
+body, html {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.background {
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+}
+
+.container {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+img{
+  height:auto;
+  max-height: 93vh;
+  max-width: 93vw;
+  margin: 1vw;
+  border-radius: 1vw;
+  box-shadow: 0px 5px 10px var(--shadowColour);
+}
+
+</style>
+
+</head>
+<body  onload="update(); setIcon()" >
+
+<div class="background"  >
+  <svg width="100%" height="100%" preserveAspectRatio="none" version="1.1" viewBox="0 0 508 317.5" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <radialGradient id="a" cx="254" cy="158.75" r="254" gradientTransform="matrix(1.1902 0 0 .73022 -48.322 42.827)" gradientUnits="userSpaceOnUse">
+      <stop stop-color=var(--backgroundCenterColour) offset="0"/>
+      <stop stop-color=var(--backgroundEdgeColour) offset="1"/>
+    </radialGradient>
+    <clipPath id="c">
+      <rect width="508" height="317.5" fill="#b3ebee" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".50403" stroke-width="1.702" style="paint-order:stroke markers fill"/>
+    </clipPath>
+    </defs>
+    <rect x="-48.322" y="-26.727" width="604.64" height="370.95" clip-path="url(#c)" fill="url(#a)" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".50403" stroke-width="2.0071" style="paint-order:stroke markers fill"/>
+  </svg>
+</div>
+
+<div class="container" onclick="update()">
+  <img id="unsplashImage" source="">
+</div>
+
+
+<script>
+var words = [
+"Final","Summer","Flavor","Secure","Plane","Depth","Nature","Vital","Prayer","Prime","Shade",
+"Album","Style","Around","Other","Remote","Noise","Reason","Review","Horror","Formal","Drink","Shadow","Thing",
+"Father","Normal","Slight","Every","Share","Theme","Touch","Reach","Board","Heavy","Ignore","Nerve","Profit",
+"Series","Glove","Strong","Enter","Works","Craft","Enjoy","Survey","Makeup","Reader","Doubt","Cheese",
+"Author","Drive","String","Pound","Barrel","Admire","Status","Until","Truck","EMail",
+"Recipe","Worker","Speech","Future","Minute","Decade","Saving","Dinner","Sport","Growth","Stone","Clean","Basis",
+"Glass","Museum","Enemy","Among","Coffee","Exist","Sharp","Legend","People","Camera","Ready","Butter","Threat","Ground",
+"Sweep","Better","Hello","Bottle","Nearby","Office","Mouse","Sacred","Center","State","Yours",
+"Theory","Giant","Height","Forget","Aside","Slowly","Detail","Custom","Person","Option","Avoid",
+"Notice","Motor","Sleep","Shell","Leave","Obtain","Smooth","Chain","Parent","Assume","Usual","Lemon",
+"Pitch","Latter","Route","Seven","Reform","Abroad","Float","Adjust","Ratio","Adopt",
+"Common","Relief","Scared","Nation","Proper","Safety","Clock","Street","Degree","Voter","Count","Define","Symbol",
+"Salary","Devote","While","Bring","Brush","Margin","Golden","Memory","Honey",
+"Write","Power","Breath","Enough","Garlic","Second","Source","Almost","Smell","Wheel","Ghost","Fruit",
+"Travel","Enable","River","Light","Credit","Select","Invest","Choose","Extra","Assist","Valley",
+"Early","Often","Speed","Others","Twelve","Switch","Anyone","Month","Bread","Eight","Hunter","Damage",
+"Retain","Title","Trial","Order","Comedy","Above","Prefer","Family","Afford","Clear","Estate",
+"Figure","Quick","Garage","Habit","Agree","Coach","Beyond","Engage","Accept","Freeze","Raise","Lesson",
+"Script","Refuse","Short","Motion","County","Tough","World","South","Supply","Crowd","Judge",
+"Employ","Floor","Broken","Fight","Begin","Always","Visual","Record","Aspect","Imply",
+"Active","Tactic","Storm","Cycle","Apple","Delay","Fiber","Laugh","Chief","Plate","Brand",
+"Belief","Print","Branch","Season","Planet","Coast","Exact","Beach","Forth","Thank","Honest","Quote",
+"Grant","Viewer","Powder","Shelf","Scheme","Charge","Visit","Unlike","Still","Being",
+"Weekly","Talent","Heaven","Worth","Potato","Corner","Yellow","Submit","Index","Shock",
+"Least","Sight","Asset","Stable","Apply","Borrow","Highly","Scene","Stare","Under","Below","Island","Toward",
+"Assign","Knock","Garden","Thirty","Focus","Except","Front","Cotton","Glance","Chart","Stick","Danger","Writer","Annual",
+"Lawyer","Happen","Hotel","Novel","Slide","Throw","Impose","Amount","Handle","Middle",
+"Fully","Unless","Nobody","Fence","Cookie","Learn","Stand","Claim","Stake","Today","Itself","Uncle","Skill","School",
+"Manner","Become","Smile","Remind","Locate","Expose","Critic","Equal","Shore",
+"Alone","Recall","Cheap","Wonder","Access",
+];
+
+function update() {
+  let index = Math.floor((Math.random() * words.length));
+  let index2 = Math.floor((Math.random() * words.length));
+  var imgurl = "https://source.unsplash.com/random/?" + words[index] +"," +words[index2] ;
+  document.getElementById("unsplashImage").src = imgurl;
+}
+
+function setIcon() {
+svgToast = `
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path style="fill:rgb(177,139,139)" d="m 8.9048268,26.824018 c -1.4089375,6.452028 5.4729452,23.692373 10.7895312,35.610089 5.316577,11.917961 1.244852,29.563734 12.05059,29.442709 4.488787,-0.05083 5.867003,-1.58461 8.367606,-3.27733 3.518889,-2.382261 7.886643,-5.491826 14.287844,-8.82531 10.949758,-5.702164 30.309241,-13.39783 34.080344,-16.928588 2.15532,-1.470749 3.736739,-8.082223 2.067982,-10.578939 C 87.070496,46.585052 70.597203,19.48125 68.133393,13.698733 67.858044,9.8956751 65.421972,7.9220134 63.252986,8.139618 60.58489,8.450085 56.424566,8.728277 51.363347,12.524069 19.422708,31.488769 11.715897,16.070311 8.905721,26.824263 Z" /><path d="M 78.384922,29.878661 C 73.997563,21.700828 62.456963,18.831109 53.216784,17.977163 41.843432,16.92598 28.552094,19.039076 20.080425,26.699361 c -4.843144,4.378888 -7.417559,11.840741 -6.862549,18.346269 0.983197,11.522444 7.394084,24.313712 17.484088,29.965529 12.002192,6.721185 30.953093,8.21922 41.257077,-0.893732 11.162035,-9.871204 13.470202,-31.108003 6.425646,-44.239105 z" fill="white" id="path6"/><path d="m 44.372347,16.87633 c -9.090108,0.511355 -18.343361,3.179065 -24.921252,9.126901 -5.113749,4.623601 -7.749166,12.311285 -7.167763,19.122273 1.007575,11.808071 7.492349,24.841378 17.961162,30.703778 6.158909,3.448937 14.023771,5.533457 21.714119,5.610667 7.690593,0.07718 15.238861,-1.858219 20.623941,-6.620736 5.807206,-5.13553 9.233882,-13.118264 10.348759,-21.475939 1.114848,-8.357676 -0.07624,-17.120045 -3.718347,-23.908764 -2.334117,-4.350575 -6.52585,-7.226826 -11.240948,-9.124002 -4.714844,-1.897223 -9.987615,-2.835344 -14.66834,-3.268125 -2.888599,-0.266982 -5.901367,-0.33669 -8.931566,-0.166241 z m 0.120545,1.884102 c 2.925392,-0.169507 5.839885,-0.107602 8.637721,0.150993 4.56018,0.421486 9.678043,1.34499 14.140438,3.140578 4.462394,1.795626 8.234467,4.442064 10.287766,8.269322 3.402468,6.341894 4.580511,14.763226 3.511868,22.774046 -1.068567,8.01082 -4.377194,15.582083 -9.732258,20.317747 C 66.419043,77.763449 59.339868,79.636652 51.977984,79.56283 44.61609,79.488943 37.0049,77.463957 31.161372,74.191784 21.450414,68.753694 15.112144,56.20278 14.153155,44.966915 13.624105,38.766865 16.13765,31.530598 20.70999,27.396422 26.840097,21.853525 35.715989,19.269905 44.492647,18.761354 Z" fill="black" id="path8" /><path d="m 33.218784,50.94167 c 1.227637,5.461819 5.645285,10.717404 10.825589,12.839921 4.949645,2.027999 11.716819,1.74959 15.978071,-1.483465 5.101645,-3.870592 7.841868,-11.615635 6.86254,-17.943975 C 65.980502,38.510387 61.31207,32.705836 55.835258,30.475123 50.297198,28.219571 42.536662,28.77236 38.03578,32.709365 33.304465,36.847899 31.840324,44.808618 33.218784,50.941623 Z" fill="rgb(240,187,35)" id="path10" /><path d="m 46.42734,28.310193 c -3.350191,0.365615 -6.575236,1.563244 -9.010479,3.693405 -5.107933,4.467967 -6.561193,12.703159 -5.113505,19.144297 1.305025,5.806246 5.874984,11.244101 11.384966,13.501677 5.255105,2.153192 12.27837,1.902258 16.900031,-1.604245 5.452849,-4.137084 8.260851,-12.129748 7.223194,-18.83399 C 66.846788,37.977882 62.019099,31.98162 56.1884,29.606888 53.252842,28.411273 49.777278,27.944561 46.427096,28.310193 Z m 0.236891,1.920114 c 3.039875,-0.331117 6.214093,0.05393 8.81635,1.113832 5.122465,2.086308 9.632053,7.699788 10.476079,13.154096 0.92133,5.952684 -1.751124,13.448421 -6.501405,17.052521 -3.900844,2.959522 -10.41218,3.265951 -15.056111,1.363194 -4.850636,-1.987432 -9.115286,-7.059814 -10.265496,-12.177432 -1.309186,-5.824647 0.164405,-13.512086 4.519038,-17.321197 2.065591,-1.806836 4.97166,-2.853745 8.011545,-3.184863 z" fill="black" id="path12" /><path d="m 47.477827,33.52875 c -1.055334,-0.102557 -1.967223,-0.03445 -3.348008,0.40044 -0.910317,0.320444 -0.162975,2.487529 0.373483,2.251626 1.190335,-0.269786 2.505676,-0.238274 3.1154,-0.215637 0.491307,-0.04668 0.464434,-2.376256 -0.140753,-2.436458 z" fill="white" id="path14" /><path d="m 40.785199,35.944387 c -1.1209,0.936427 -2.102742,2.150275 -2.81235,3.691955 -0.150682,0.933914 1.763944,1.995827 2.222261,1.177563 0.737835,-1.166287 1.394028,-1.914015 2.226213,-2.609279 0.456142,-0.377718 -0.51271,-2.74603 -1.636199,-2.260314 z" fill="white" id="path16" /></svg>
+`;
+document.querySelector("link[rel*='icon']").href = "data:image/svg+xml," + svgToast;
+}
+</script> 
+
+</body>
+</html> 
