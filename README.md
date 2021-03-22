@@ -1,6 +1,6 @@
 ## Allophone
 
-A random word and image generator from a short list of common English words. Convenient for impromptu Toastmasters Table Topics® sessions.
+A random word and image generator. Convenient for impromptu Toastmasters Table Topics® sessions.
 
 - [Screenshots & Demo](#demo)
 - [About](#about)
@@ -18,9 +18,9 @@ A random word and image generator from a short list of common English words. Con
 
 ### About
 
-Each standalone page has a list of about 300 short simple common English words.
+Each standalone page has a list of about 300 short common English words.
 
-Images courtesy of unsplash.com using two random words from the list. The words list has been trimmed to remove suggestive or gendered terms to reduce the frequency of girls in bikinis which fortunately and unfortunately increases and decreases the breadth of topics displayed.
+Images courtesy of unsplash.com using two random words from the list. The word list has been trimmed to remove suggestive or gendered terms to reduce the frequency of girls in bikinis which fortunately and unfortunately both decreases and increases the breadth of topics.
 
 ### Use
 
@@ -32,7 +32,7 @@ Words and images are chosen at random with replacement. Occasionally Unsplash wi
 
 Each page has an embedded word list. Add or remove with a text editor. No frameworks or libraries are used.
 
-The text sizes are not formatted for landscape or small screens. Tweak the text size the style tag.
+The text sizes are not formatted for landscape or small screens. Tweak the text size the style tag especially if adding longer words.
 
 Versions with transparent background are provided for use with [OBS Studio BrowserSource](https://obsproject.com/wiki/Sources-Guide#browsersource).
 
@@ -44,9 +44,8 @@ License MIT 2021
 
 Images from [unsplash.com](https://unsplash.com/license).
 
-Any other content page content [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) Stuart Mau
+Any other content [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/) Stuart Mau
 
 ### Contact
 
 Stuart Mau allophone@deauca.com
-
