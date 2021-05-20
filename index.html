@@ -2,12 +2,11 @@
 <html  lang="en-AU">
 <head>
 <meta charset="utf-8"/>
-<meta name="title" content="Table Topic generators">
+<title>Index of Table Topic generators</title>
 <meta name="description" content="Table Topic generators">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <meta name="robots" content="noindex,nofollow,noarchive" />
 <link rel="icon" type="image/svg+xml" href="">
-<title>Index of Table Topic generators</title>
 
 <!-- License
 Page content CC-BY 4 Stuart Mau https://creativecommons.org/licenses/by/4.0/
@@ -19,76 +18,77 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  -->
 
 <style>
-  
-:root {
-  --fontSize: large;
+
+* {
+    box-sizing: border-box;
 }
 
 body, html {
   margin: 0;
-  background-color: gainsboro;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  padding: 0;
+  background: rgb(0,109,168);
+  background: radial-gradient(circle, rgba(0,109,168,1) 0%, rgba(1,103,160,1) 5%, rgba(1,99,154,1) 12%, rgba(2,81,128,1) 56%, rgba(4,65,105,1) 79%, rgba(5,55,90,1) 98%, rgba(6,41,71,1) 100%);
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+}
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    padding: 10px;
+    grid-template-columns: repeat(auto-fit, max(30vw,40vh));
+    justify-content: center;
 }
 
-.column {
-  display: flex;
-  z-index: 2;
-  width: 60vw;
-  height: 100vh;
-  flex-direction: column;
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr 1fr;
+    background-color: rgba(6,41,71,1);;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 2px 3px 7px rgba(20,20,20,60%);
+    border-radius: 1vw;
+    overflow: hidden
 }
 
-@media screen and (max-width: 992px) {
-  .column {
-    width: 80vw;
-  }
-}
-@media screen and (max-width: 600px) {
-  .column {
-    width: 98vw;
-  }
-}
-
-.row {
-  display: flex;
+.previewFrame{
+  z-index: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  object-fit: fill;
   width: 100%;
-  min-height: 10vmin;
-  padding-top: 1em;
+  height: 100%;
 }
 
-.left {
-  display: flex;
-  width: 75%;
-  background-color: none;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 2em;
+.textFrame{
+  z-index: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: rgba(20,20,20,60%);
+  padding: 1px;
+  padding-left: 10px;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
 }
-.right {
-  display: flex;
-  width: 25%;
-  background-color: none;
-  padding-bottom: 1em;
-}
-.centeriframe {
-  display: flex;
-  flex-grow: 0;
-  background-color: transparent;
-  max-width: 85%;
-  max-height: 90%;
-}
+
 
 iframe{
-  border:3px;
-  border-style:none;
-  width: 95%;
+  border-style:hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   height: 100%;
-  background-color: transparent;
 }
 
 .checkered{
+  background-color: #EEE;
   background-image:
     linear-gradient(45deg, #CCC 25%, transparent 25%),
       linear-gradient(45deg, transparent 75%, #CCC 75%),
@@ -96,94 +96,83 @@ iframe{
       linear-gradient(45deg, #CCC 25%, transparent 25%);
   background-size:40px 40px;
   background-position:0 0, 0 0, -20px -20px, 20px 20px;
-
 }
 
-
-p {
+a {
   font-family: Noto Sans, Helvetica, Arial, sans-serif;
-  font-size: var(--fontSize);
-	text-align: center;
-	color: black; 
+	text-align: left;
+  font-size: medium;
+	color: white; 
 } 
 
+h1 {
+  font-family: Noto Sans, Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: white; 
+  text-shadow: 2px 3px 7px rgba(20,20,20,60%);
+} 
 
 </style>
 
 </head>
 <body>
-
-
-<div class="column">
-  <div class="row">
-    <div class="left">
-      <p><a href="random word blue background.html">random word blue background.html</a></p>
-    </div>
-    <div class="right">
-      <div class="centeriframe">
-        <iframe  src="random word blue background.html" title="Random word blue background"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="left">
-      <p><a href="random unsplash image blue background.html">random unsplash image blue background.html</a></p>
-    </div>
-    <div class="right">
-      <div class="centeriframe">
-        <iframe  src="random unsplash image blue background.html" title="random unsplash image blue background"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="left">
+  <h1>Table Topic generators</h1>
+  <div class="grid">
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random word and unsplash image blue background.html';">
       <p><a href="random word and unsplash image blue background.html">random word and unsplash image blue background.html</a></p>
     </div>
-    <div class="right">
-      <div class="centeriframe">
-        <iframe  src="random word and unsplash image blue background.html" title="random word and unsplash image blue background"></iframe>
-      </div>
+    <div class="previewFrame">
+      <iframe  src="random word and unsplash image blue background.html"></iframe>
     </div>
   </div>
 
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random word blue background.html';">
+      <p><a href="random word blue background.html">random word blue background.html</a></p>
+    </div>
+    <div class="previewFrame">
+      <iframe src="random word blue background.html"></iframe>
+    </div>
+  </div>
 
-  <div class="row">
-    <div class="left">
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random unsplash image blue background.html';">
+      <p><a href="random unsplash image blue background.html">random unsplash image blue background.html</a></p>
+    </div>
+    <div class="previewFrame">
+      <iframe src="random unsplash image blue background.html"></iframe>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random unsplash image transparent background.html';">
       <p><a href="random unsplash image transparent background.html">random unsplash image transparent background.html</a></p>
     </div>
-    <div class="right">
-      <div class="centeriframe checkered">
-        <iframe  src="random unsplash image transparent background.html" title="random unsplash image transparent background"></iframe>
-      </div>
+    <div class="previewFrame checkered">
+      <iframe  src="random unsplash image transparent background.html"></iframe>
     </div>
   </div>
 
-  <div class="row">
-    <div class="left">
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random word transparent background black text.html';">
       <p><a href="random word transparent background black text.html">random word transparent background black text.html</a></p>
     </div>
-    <div class="right">
-      <div class="centeriframe checkered">
-        <iframe  src="random word transparent background black text.html" title="random word transparent background black text"></iframe>
-      </div>
+    <div class="previewFrame checkered">
+      <iframe  src="random word transparent background black text.html"></iframe>
     </div>
   </div>
 
-  <div class="row">
-    <div class="left">
+  <div class="card">
+    <div class="textFrame" onclick="location.href='random word transparent background white text.html';">
       <p><a href="random word transparent background white text.html">random word transparent background white text.html</a></p>
     </div>
-    <div class="right">
-      <div class="centeriframe checkered">
-        <iframe  src="random word transparent background white text.html" title="random word transparent background white text"></iframe>
-      </div>
+    <div class="previewFrame checkered">
+      <iframe  src="random word transparent background white text.html"></iframe>
     </div>
   </div>
 
 </div>
-
 
 </body>
 </html> 
