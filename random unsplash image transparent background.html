@@ -61,6 +61,7 @@ body {
   transition: all 0.5s;
 }
 
+
 img{
     display: block;
     object-fit: contain;
@@ -70,6 +71,13 @@ img{
     box-shadow: 2px 3px 7px var(--shadowColour);
 }
 
+
+@media (prefers-reduced-motion) {
+  .right {
+    transition: none;
+  }
+}
+
 </style>
 </head>
 
@@ -77,7 +85,7 @@ img{
 
 <div class="wrapper">
   <div class="right" id="imgBox" >
-    <img id="unsplashImage1">
+    <img id="unsplashImage">
   </div>
 </div>
 
@@ -116,7 +124,9 @@ var words = [
 "Alone","Recall","Cheap","Wonder","Access",
 ];
 
-const img = document.getElementById("unsplashImage1")
+setIcon();
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const img = document.getElementById("unsplashImage")
 const imgBox = document.getElementById("imgBox")
 
 function getWord() {
@@ -126,20 +136,32 @@ function getImage() {
   return "https://source.unsplash.com/random/?" + getWord() +"," + getWord();
 }
 
-document.body.addEventListener("click", ()=> refresh(), { once: true });
+if (mediaQuery.matches) {
+  document.body.addEventListener("click", ()=> refresh());
+} else {
+  document.body.addEventListener("click", ()=> refresh(), {once: true });
+}
 
-setIcon();
 
 //Wait for image to load before fading in together on first load.
 img.addEventListener("load", ()=>show(), { once: true });
 img.src = getImage(); 
+
+function refresh()
+{
+  if (mediaQuery.matches) {
+    img.src = getImage(); 
+  } else {
+    anmiated()
+  }
+}
 
 // For subsequent refreshes:
 // 1 Hide word and image,
 // 2 Once the image transition has finished, change the word and image.
 // 3 Once the image has loaded, make them visible.
 // 4 Once the animation is complete, allow refreshing.
-function refresh()
+function anmiated()
 {
   imgBox.addEventListener("transitionend", ()=> {
     img.addEventListener("load", ()=>{

@@ -31,12 +31,24 @@ body, html {
   background-repeat: no-repeat;
   background-attachment:fixed;
 }
+
+.header{
+  padding-left: 1em;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  justify-content: center;
+  background-color: rgba(20,20,20,30%);
+  box-shadow: 2px 3px 7px rgba(20,20,20,60%);
+}
+
+
 .grid {
     display: grid;
     grid-gap: 20px;
     padding: 10px;
     grid-template-columns: repeat(auto-fit, max(30vw,40vh));
     justify-content: center;
+    margin-top: 2em;
 }
 
 .card {
@@ -50,7 +62,7 @@ body, html {
     height: 100%;
     box-shadow: 2px 3px 7px rgba(20,20,20,60%);
     border-radius: 1vw;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .previewFrame{
@@ -100,24 +112,35 @@ iframe{
 
 a {
   font-family: Noto Sans, Helvetica, Arial, sans-serif;
-	text-align: left;
+  text-align: left;
   font-size: medium;
-	color: white; 
+  color: white; 
 } 
 
 h1 {
   font-family: Noto Sans, Helvetica, Arial, sans-serif;
-	text-align: center;
-	color: white; 
+  text-align: left;
+  color: white; 
   text-shadow: 2px 3px 7px rgba(20,20,20,60%);
 } 
+
+p{
+  font-family: Noto Sans, Helvetica, Arial, sans-serif;
+  text-align: left;
+  color: white; 
+  text-shadow: 2px 3px 7px rgba(20,20,20,60%);
+  max-width: max(60vw, 50vh);
+}
 
 </style>
 
 </head>
 <body>
-  <h1>Table Topic generators</h1>
-  <div class="grid">
+<div class="header">
+  <h1>Table Topics generators</h1>
+  <p>Each standalone page has a list of about 300 short common English words. The word list has been trimmed to remove suggestive or gendered terms to reduce the frequency of girls in bikinis which fortunately and unfortunately both decreases and increases the breadth of topics. Images courtesy of unsplash.com using two random words from the list.</p>
+</div>
+<div class="grid">
   <div class="card">
     <div class="textFrame" onclick="location.href='random word and unsplash image blue background.html';">
       <p><a href="random word and unsplash image blue background.html">random word and unsplash image blue background.html</a></p>

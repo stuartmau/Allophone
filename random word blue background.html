@@ -83,6 +83,16 @@ p {
   transition-timing-function: ease-in;
   filter: blur(0);
 } 
+
+@media (prefers-reduced-motion) {
+  .left {
+    transition: none;
+  }
+  .p {
+    transition: none;
+  }
+}
+
 </style>
 </head>
 
@@ -144,18 +154,32 @@ var words = [
 ];
 
 setIcon();
-
+const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const word = document.getElementById("word")
 
 function getWord() {
   return words[Math.floor((Math.random() * words.length))];
 }
 
-document.body.addEventListener("click", ()=> refresh());
+if (mediaQuery.matches) {
+  document.body.addEventListener("click", ()=> refresh());
+} else {
+  document.body.addEventListener("click", ()=> refresh(), {once: true });
+}
+
 word.innerHTML = getWord();
 show();
 
 function refresh()
+{
+  if (mediaQuery.matches) {
+    word.innerHTML = getWord();
+  } else {
+    anmiated()
+  }
+}
+
+function anmiated()
 {
   word.addEventListener("transitionend", ()=> {
     //2 show
