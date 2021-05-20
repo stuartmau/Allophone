@@ -161,11 +161,7 @@ function getWord() {
   return words[Math.floor((Math.random() * words.length))];
 }
 
-if (mediaQuery.matches) {
-  document.body.addEventListener("click", ()=> refresh());
-} else {
-  document.body.addEventListener("click", ()=> refresh(), {once: true });
-}
+document.body.addEventListener("click", ()=> refresh());
 
 word.innerHTML = getWord();
 show();

@@ -193,12 +193,7 @@ function getImage() {
   return "https://source.unsplash.com/random/?" + getWord() +"," + getWord();
 }
 
-if (mediaQuery.matches) {
-  document.body.addEventListener("click", ()=> refresh());
-} else {
-  document.body.addEventListener("click", ()=> refresh(), {once: true });
-}
-
+document.body.addEventListener("click", ()=> refresh());
 
 //Wait for image to load before fading in together on first load.
 img.addEventListener("load", ()=>show(), { once: true });
